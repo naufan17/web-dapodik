@@ -1,0 +1,15 @@
+<?php
+
+//hapus session
+session_start();
+$_SESSION = [];
+session_unset();
+session_destroy();
+
+//hapus cookie
+setcookie('id', '', time()-60);
+setcookie('key', '', time()-60);
+
+header("Location: login.php");
+
+?>
